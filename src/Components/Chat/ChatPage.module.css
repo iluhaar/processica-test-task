@@ -1,0 +1,33 @@
+.chatPage_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.chatWindow {
+    display: flex;
+    border: 1px solid #333300;
+    width: 50vw;
+    height: 75vh;
+    justify-content:stretch;
+    align-items: flex-end;
+    margin: 10px;
+    align-content: flex-end;
+}
+.message {
+    border: .5px solid #90ee90;
+    background-color: #90ee90;
+    min-width: 125px;
+    margin: 10px;
+    padding: 5px;
+}
+.inputCon {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    
+}
+.inputCon input {
+    height: 15px;
+    margin: 10px;
+}
