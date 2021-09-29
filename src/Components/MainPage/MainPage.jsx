@@ -15,7 +15,7 @@ const MainPage = () => {
             <Header />
             {context.users.map(user => <div>{user.email}</div>)}
             <h1>Main page</h1>
-                <h2>Henlo, dear {context.users.map(user => <div>{user.email}</div>)}</h2>
+                <h3>Henlo, dear {context.user.map(user => <div>{user.email}</div>)}</h3>
         </div>
     )
 }

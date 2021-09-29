@@ -2,7 +2,8 @@ import React, { useContext, useEffect, useState } from 'react'
 import { Header } from '..'
 import ChatContext from '../../Context/ChatContext'
 import styles from './ChatPage.module.css'
-import Message from './Message'
+import FMessage from './FMessage'
+import LMessage from './LMessage'
 
 
 const Chat = () => {
@@ -29,14 +30,18 @@ const Chat = () => {
             <h1>Hi {context?.chat?.map(title => <div>{title.title}</div>)} </h1>
             <div className={styles.chatPage_container}>
                 <div className={styles.chatWindow}>
-                    <div >
-                        <div className={styles.message}>
-                            {/* {messageList?.map((message, i) => (
-                                <div key={i}>{message.message}</div>
-                            ))} */}
-                            {messageList?.map((message, i) => <Message key={i} message={message} />)}
+                    <div className={styles.try}>
+                        <div>
+                            <div>
+                                {messageList.map((message, i) => {
+                                    if (message.sender === 'me') {
+                                        return <LMessage message={message} />
+                                    } else {
+                                        return <FMessage message={message} />
+                                    }
+                                })}
+                            </div>
                         </div>
-
 
 
                     </div>

@@ -1,4 +1,4 @@
-import { CHAT_CREATION, DELETE_USER, SEND_MESSAGE, SET_USER } from "./types"
+import { CHAT_CREATION, DELETE_USER, SEND_MESSAGE, SET_USER, SET_PROFILE_INFO } from "./types"
 
 export const ChatReducer = (state, action) => {
     switch (action.type) {
@@ -21,6 +21,11 @@ export const ChatReducer = (state, action) => {
             return {
                 ...state,
                 chats: action.payload
+            }
+        case SET_PROFILE_INFO:
+            return {
+                ...state,
+                user: action.payload
             }
         default:
             return state

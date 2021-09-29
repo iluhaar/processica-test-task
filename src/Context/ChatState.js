@@ -2,44 +2,34 @@ import React, { useReducer, useState } from 'react'
 import ChatContext from './ChatContext'
 import { ChatReducer } from './ChatReducer'
 
-import { SEND_MESSAGE, SET_USER, DELETE_USER, CHAT_CREATION } from "./types"
+import { SEND_MESSAGE, SET_USER, DELETE_USER, CHAT_CREATION, SET_PROFILE_INFO  } from "./types"
 
 
 const ChatState = ({ children }) => {
 
     const initialState = {
         messages: [
-            // {
-            //     sender: 'alsoMe',
-            //     message: 'Hey yoy, bruh'
-            // },
-            // {
-            //     sender: 'me',
-            //     message: 'Hey yoy, it`s Me'
-            // },
             {
-                message: ''
-            },
-            {
-                message: ''
+                sender: 'alsoMe',
+                message: 'Hey yoy, bruh'
             },
         ],
         users: [
-            // {
-            //     // id: 0,
-            //     email:'',
-            //     password: ''
-            // }
         ],
         chats: [
+            {
+                
+            }
             
-        ]
+        ],
+        user: [],
     }
 
     const [state, dispatch] = useReducer(ChatReducer, initialState)
     const [users, setUsers] = useState([])
     const [chat, setChat] = useState([])
-    
+    const [user, setUser] = useState([])
+    const [newProfileData, setNewProfileData] = useState([])
     console.log(users)
     
     const sendMessage = (text) => {
@@ -67,7 +57,7 @@ const ChatState = ({ children }) => {
         debugger
 
         let setNewUser = [...state.users, newUser]
-        setUsers(setNewUser)
+        setUser(setNewUser)
         dispatch({
             type: SET_USER,
             payload: setNewUser
@@ -93,29 +83,47 @@ const ChatState = ({ children }) => {
 
     }
     const chatCreation = (title, description) => {
-        debugger
         let chatData = {
             title:title,
             description:description
         }
-        debugger
         let chatCreation = [...state.chats, chatData]
         setChat(chatCreation)
         dispatch({
             type:CHAT_CREATION,
             payload:chatCreation
         })
+    }
+
+    const setUserInfo = (name, lName) => {
+        debugger
+        let userInfo = {
+            name:name, 
+            lName:lName
+        }
+        debugger
+        let setUserInfo = [...state.user, userInfo] 
+        debugger
+        setNewProfileData(setUserInfo)
+        dispatch({
+            type:SET_PROFILE_INFO,
+            payload: setUserInfo
+        })
         debugger
     }
 
     return <ChatContext.Provider value={{
         messages: state.messages,
+        users:state.users,
         sendMessage,
         logIn,
         logOut,
-        users,
         chatCreation,
-        chat
+        chat,
+        user,
+        setUserInfo,
+        newProfileData
+
     }}
     >
         {children}

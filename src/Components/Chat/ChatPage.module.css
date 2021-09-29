@@ -17,7 +17,7 @@
 .message {
     border: .5px solid #90ee90;
     background-color: #90ee90;
-    min-width: 125px;
+    width: 25%;
     margin: 10px;
     padding: 5px;
 }
@@ -30,4 +30,7 @@
 .inputCon input {
     height: 15px;
     margin: 10px;
+}
+.try {
+    width: 100%;
 }
