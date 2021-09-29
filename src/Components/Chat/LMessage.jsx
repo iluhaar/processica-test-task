@@ -5,7 +5,7 @@ import styles from './ChatPage.module.css'
 const LMessage = ({message}) => {
     return (
         <div align='right'>
-            <div align='left' className={styles.message}>{message.message}</div>
+            <div align='left' className={styles.message}>{message}</div>
         </div>
     )
 }

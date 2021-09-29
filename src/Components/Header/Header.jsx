@@ -19,11 +19,17 @@ const Header = () => {
     const handleProfileClick = () => {
         history.push('/profile')
     }
+    const goBack = () => {
+        history.goBack()
+    }
 
     return (
         <div className={styles.container}>
             <div>
                 <button onClick={() => setModalActive(true)}>Create channel</button>
+            </div>
+            <div className={styles.goMainButton}onClick={goBack}>
+                <p>Go Back</p>
             </div>
             <div>
                 <button onClick={handleProfileClick}>Profile</button>

@@ -25,12 +25,12 @@ const Profile = () => {
                 <div className={styles.detailedInfo}>
                     <div>
                     <label htmlFor="text"> Name:
-                        {context?.newProfileData?.map((n, i) => <div key={i}>{n.name}</div>)}
+                        {context.newProfileData.name}
                     </label>
                     </div>
                     <div>
                     <label htmlFor="text"> Last name:
-                        {context?.newProfileData?.map((n, i) => <div key={i}>{n.lName}</div>)}
+                    {context.newProfileData.lName}
                     </label>
                     </div>
                 </div>

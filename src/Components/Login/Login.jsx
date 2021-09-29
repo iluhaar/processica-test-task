@@ -24,7 +24,6 @@ const Login = () => {
         localStorage.setItem('password', password)
 
     }
-    console.log(usersList)
 
     useEffect(() => {
 
@@ -36,9 +35,6 @@ const Login = () => {
         <div className={styles.container}>
             <div className={styles.formcontainer}>
                 <h1>Login</h1>
-                {usersList?.map((user, i) => (
-                    <div key={i}>{user?.email}</div>
-                ))}
                 <form onSubmit={handleSubmit}>
                     <div className={styles.loginform}>
                         <div className={styles.loginFormItem}>
