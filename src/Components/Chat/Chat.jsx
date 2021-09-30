@@ -4,7 +4,6 @@ import ChatContext from '../../Context/ChatContext'
 import styles from './ChatPage.module.css'
 import FMessage from './FMessage'
 import LMessage from './LMessage'
-import List from 'react-virtualized/dist/commonjs/List';
 
 
 const Chat = () => {
@@ -23,42 +22,18 @@ const Chat = () => {
 
     }
 
-    const pro = [
-        'sadasd',
-        'sadasd231',
-        'sadasd231',
-        'sadasd23',
-        'sada21sd',
-        'sadas213434d',
-        'sadasd35',
-        'sadasd35',
-        'sadasd35',
-        'sadasd34',
 
-    ]
-
-    let smth = ({ key, index, isScrolling, isVisible, style }) => {
-        return (
-            <div key={key}>{pro[index]}</div>
-        )
-    }
-
+    // I tried to use reactive virtualized, but I was having problems rendering data to List, so I did not implement it.
+    // This is quite an interesting task, I learned a thing or two from here, thanks
+ 
+ 
     return (
         <div>
             <Header />
-
-            {/* <List width={500}
-                height={500}
-                rowCount={pro.length}
-                rowHeight={20}
-                rowRenderer={smth}
-                isScrolling
-            /> */}
-            <h1>Hi, {context.chat.title === '' ? <div>Bruh</div> : <div>{context.chat.title}</div>} </h1>
-            {/* <h1>Hi {context?.chat?.map(title => <div>{title.title}</div>)} </h1> */}
+            <h1>Hi, {context.chat.title === undefined ? <div>Bruh</div> : <div>{context.chat.title}</div>} </h1>
             <div className={styles.chatPage_container}>
                 <div className={styles.chatWindow}>
-                    <div className={styles.try}>
+                    <div className={styles.message_container}>
                         <div>
                             <div>
                                 {messageList?.map((message, i) => {
@@ -70,8 +45,6 @@ const Chat = () => {
                                 })}
                             </div>
                         </div>
-
-
                     </div>
                 </div>
                 <br />

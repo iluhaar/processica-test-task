@@ -13,6 +13,8 @@
     align-items: flex-end;
     margin: 10px;
     align-content: flex-end;
+    overflow-y: auto;
+    overflow-wrap: normal;
 }
 .message {
     border: .5px solid #90ee90;
@@ -31,6 +33,6 @@
     height: 15px;
     margin: 10px;
 }
-.try {
+.message_container {
     width: 100%;
 }

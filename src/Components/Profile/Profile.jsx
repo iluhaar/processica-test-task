@@ -38,11 +38,11 @@ const Profile = () => {
                     <form onSubmit={handleSave}>
                         <div>
                             <label htmlFor="text">Name:</label>
-                            <input type="text" id="name" placeholder="type.." value={name} onChange={(e) => setName(e.target.value)} />
+                            <input type="text" id="name" placeholder="type.." required value={name} onChange={(e) => setName(e.target.value)} />
                         </div>
                         <div>
                             <label htmlFor="text">Last name:</label>
-                            <input type="text" id="Lastname" value={lName} placeholder="type.." onChange={(e) => setLName(e.target.value)} />
+                            <input type="text" id="Lastname" value={lName} required placeholder="type.." onChange={(e) => setLName(e.target.value)} />
                         </div>
                         <button>Save</button>
                     </form>

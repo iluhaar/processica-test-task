@@ -1,3 +1,4 @@
+
 .userInfo {
   display: flex;
   flex-direction: row;
@@ -6,18 +7,24 @@
   height: 50vh;
 }
 .detailedInfo {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
   border: 1px solid #90ee90;
   padding: 10px;
   justify-content: space-around;
-height: 25vh;
+  height: 25vh;
 }
 .form_container {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-    padding: 10px;
-    height: 25vh;
-  
+  padding: 10px;
+  height: 25vh;
+}
+.form_container div {
+  padding: 10px;
+}
+.form_container button {
+  min-width: 70px;
+  min-height: 25px;
 }

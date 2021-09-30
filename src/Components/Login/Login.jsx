@@ -11,10 +11,8 @@ const Login = () => {
     let history = useHistory();
 
 
-    const [user, setUser] = useState([])
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    let usersList = context.users
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -25,10 +23,6 @@ const Login = () => {
 
     }
 
-    useEffect(() => {
-
-        setUser(usersList)
-    }, [usersList, user])
 
 
     return (

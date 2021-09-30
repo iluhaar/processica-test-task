@@ -61,7 +61,6 @@ const ChatState = ({ children }) => {
         user: [],
     }
     const [state, dispatch] = useReducer(ChatReducer, immutableState)
-    const [users, setUsers] = useState([])
     const [message, setNewMessage] = useState([])
     const [chat, setChat] = useState([])
     const [user, setUser] = useState([])
@@ -130,11 +129,14 @@ const ChatState = ({ children }) => {
             description: description
         }
         let chatCreation = immutableState.set("chats", chatData)
+        debugger
         setChat(chatCreation.get('chats'))
+        setNewMessage([])
         dispatch({
             type: CHAT_CREATION,
             payload: chatCreation
         })
+        debugger
     }
 
     const setUserInfo = (name, lName) => {
