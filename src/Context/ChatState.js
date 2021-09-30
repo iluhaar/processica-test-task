@@ -34,32 +34,7 @@ const ChatState = ({ children }) => {
         user: [],
 
     })
-    const initialState = {
-        messages: [
-            {
-                sender: 'alsoMe',
-                message: 'Hey yoy, bruh'
-            },
-            {
-                sender: 'me',
-                message: 'Hey yoy, It`s me'
-            },
-        ],
-        users: [
-            {
 
-            }
-        ],
-        chats: [
-            {
-                title: '',
-                description: ''
-
-            }
-
-        ],
-        user: [],
-    }
     const [state, dispatch] = useReducer(ChatReducer, immutableState)
     const [message, setNewMessage] = useState([])
     const [chat, setChat] = useState([])
@@ -129,14 +104,12 @@ const ChatState = ({ children }) => {
             description: description
         }
         let chatCreation = immutableState.set("chats", chatData)
-        debugger
         setChat(chatCreation.get('chats'))
         setNewMessage([])
         dispatch({
             type: CHAT_CREATION,
             payload: chatCreation
         })
-        debugger
     }
 
     const setUserInfo = (name, lName) => {

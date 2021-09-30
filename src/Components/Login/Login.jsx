@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import ChatContext from '../../Context/ChatContext'
 import { useHistory } from 'react-router-dom'
 import styles from './login.module.css'
