@@ -12,7 +12,6 @@ const MainPage = () => {
         
         <div>
             <Header />
-            {/* {context.users.map(user => <div>{user.email}</div>)} */}
             <h1>Main page</h1>
                 <h2>Hello, dear {context.user.email}</h2>
         </div>
